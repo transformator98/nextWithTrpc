@@ -1,0 +1,8 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "max-len": ["error", { "code": 120, "ignorePattern": "\\{(.mjs)\\}" }],
+    "@typescript-eslint/no-unused-vars": "warn",
+    "no-unused-vars": "off"
+  }
+}
