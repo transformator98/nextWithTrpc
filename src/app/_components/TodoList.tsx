@@ -114,7 +114,7 @@ export default function TodoList() {
             {!todo.isEditing ? (
               <button
                 className="bg-gray-400 text-white p-2 rounded-lg"
-                onClick={() => handleEdit(todo.id, todo.content)}
+                onClick={() => handleEdit(todo.id, todo.content as string)}
               >
                 Edit
               </button>
