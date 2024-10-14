@@ -18,7 +18,7 @@ export const Users = () => {
     retry: false,
     refetchOnWindowFocus: false,
   });
-  console.log('DB_FILE_NAME', process.env.DB_FILE_NAME);
+
   const createUserMutation = trpc.users.createUser.useMutation({
     onSuccess: () => refetch(),
   });

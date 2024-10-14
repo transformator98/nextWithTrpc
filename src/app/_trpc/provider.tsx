@@ -10,7 +10,6 @@ import { trpc } from './client';
 
 export default function Provider({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(() => new QueryClient());
-  const BASE_URL = process.env.BASE_URL!;
   const [trpcClient] = useState(() =>
     trpc.createClient({
       links: [
