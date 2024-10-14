@@ -1,17 +1,10 @@
 import { publicProcedure, router } from '@/server/trpc';
 import { todos } from '@/app/db/schema';
-
-import { migrate } from 'drizzle-orm/better-sqlite3/migrator';
+import { db } from '@/app/db';
 
 import { z } from 'zod';
 
-import Database from 'better-sqlite3';
-
-import { drizzle } from 'drizzle-orm/better-sqlite3';
 import { eq } from 'drizzle-orm';
-
-const sqlite = new Database('local.db');
-const db = drizzle(sqlite);
 
 export const todoRouter = router({
   getTodos: publicProcedure.query(async () => {

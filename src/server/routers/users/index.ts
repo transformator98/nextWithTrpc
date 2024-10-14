@@ -1,17 +1,10 @@
-import { User } from '@/server/types/users';
 import { router, publicProcedure } from '@/server/trpc';
 import { users } from '@/app/db/schema';
+import { db } from '@/app/db';
 
 import { TRPCError } from '@trpc/server';
 
 import { z } from 'zod';
-
-import Database from 'better-sqlite3';
-
-import { drizzle } from 'drizzle-orm/better-sqlite3';
-
-const sqlite = new Database('local.db');
-const db = drizzle(sqlite);
 
 export const userRouter = router({
   // обработка запроса на получение всех пользователей
