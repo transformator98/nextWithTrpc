@@ -6,6 +6,6 @@ export default {
   // driver: 'better-sqlite',
   dialect: 'sqlite',
   dbCredentials: {
-    url: process.env.NEXT_PUBLIC_DB_FILE_NAME!,
+    url: 'file:local.db',
   },
 } satisfies Config;
