@@ -10,11 +10,12 @@ import { trpc } from './client';
 
 export default function Provider({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(() => new QueryClient());
+  const BASE_URL = process.env.BASE_URL!;
   const [trpcClient] = useState(() =>
     trpc.createClient({
       links: [
         httpBatchLink({
-          url: 'http://localhost:3001/api/trpc',
+          url: `${BASE_URL}/api/trpc`,
         }),
       ],
     })
